@@ -11,7 +11,8 @@ ENV USER=protonmail
 ENV DEBIAN_FRONTEND=noninteractive
 
 # install packages
-COPY ./${PROTONMAIL_BRIDGE_FILE} .
+#COPY ./${PROTONMAIL_BRIDGE_FILE} .
+RUN wget https://protonmail.com/download/${PROTONMAIL_BRIDGE_FILE}
 RUN apt-get update -q && \
     apt-get install --no-install-recommends --no-install-suggests --yes \
         ./${PROTONMAIL_BRIDGE_FILE} \
