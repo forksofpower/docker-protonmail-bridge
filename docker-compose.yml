@@ -1,6 +1,7 @@
 version: '2'
 services:
-  protonmail-bridge:
+  bridge:
+    container_name: pb_${PROTONMAIL_LOGIN}
     build:
       context: .
       args:
